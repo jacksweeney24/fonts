@@ -1,43 +1,33 @@
 'use client';
 
-import { Bodoni_Moda, Montserrat, Playfair_Display, Source_Sans_3, Libre_Baskerville, Josefin_Sans } from 'next/font/google';
+import { Source_Sans_3 } from 'next/font/google';
 import localFont from 'next/font/local';
 import { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 
-// Initialize Google fonts
-const bodoni = Bodoni_Moda({
-  subsets: ['latin'],
-  variable: '--font-bodoni',
-});
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-});
-
+// Initialize only the fonts we're actually using
 const sourceSans = Source_Sans_3({
   subsets: ['latin'],
   variable: '--font-source-sans',
 });
 
-const baskerville = Libre_Baskerville({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  variable: '--font-baskerville',
+// Initialize local fonts we're actually using
+const sloopScript = localFont({
+  src: [
+    {
+      path: '../fonts/NTSomic-Regular.otf',
+      weight: '400',
+      style: 'normal'
+    }
+  ],
+  variable: '--font-somic-regular'
 });
 
-const josefin = Josefin_Sans({
-  subsets: ['latin'],
-  variable: '--font-josefin',
+const univers = localFont({
+  src: '../fonts/UniversRegular.ttf',
+  variable: '--font-univers'
 });
 
 // Define interface for font entries with description
@@ -50,41 +40,8 @@ interface FontEntry {
   description: string;
 }
 
-// Initialize local fonts
-const sloopScript = localFont({
-  src: [
-    {
-      path: '../fonts/NTSomic-Regular.otf',
-      weight: '400',
-      style: 'normal'
-    }
-  ],
-  variable: '--font-somic-regular'
-});
-
-const editorsNote = localFont({
-  src: '../fonts/EditorsNote-Regular.otf',
-  variable: '--font-editors-note'
-});
-
-const alacritySans = localFont({
-  src: '../fonts/AlacritySans-Regular.ttf',
-  variable: '--font-alacrity'
-});
-
-// Add these local font declarations after the existing ones
-const violetJWSans = localFont({
-  src: '../fonts/VioletJWSans-Regular.otf',
-  variable: '--font-violet-sans'
-});
-
-const violetJWSerif = localFont({
-  src: '../fonts/VioletJWSerif-Regular.otf',
-  variable: '--font-violet-serif'
-});
-
+// Rest of your code remains the same, starting from:
 export default function Home() {
-  // State for selected fonts only
   const [selectedPrimary, setSelectedPrimary] = useState<string>('');
   const [selectedSecondary, setSelectedSecondary] = useState<string>('');
 
@@ -350,7 +307,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           {/* Using Geist Sans for clean, modern footer text */}
           <p className="font-geist-sans text-sm text-gray-600">
-            Made by{' '}
+            Made by{" "}
             <a 
               href="https://www.jacksweeney.xyz/"
               target="_blank"
