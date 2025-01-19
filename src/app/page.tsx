@@ -121,7 +121,7 @@ export default function Home() {
                 className="block text-6xl sm:text-8xl md:text-9xl lg:text-[12rem]" 
                 style={{ fontFamily: 'var(--font-univers)' }}
               >
-                JACK'S
+                JACK&apos;S
               </span>
               <span 
                 className="block text-6xl sm:text-8xl md:text-9xl lg:text-[12rem]" 
