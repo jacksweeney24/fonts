@@ -52,7 +52,13 @@ interface FontEntry {
 
 // Initialize local fonts
 const sloopScript = localFont({
-  src: '../fonts/NTSomic-regular.otf', // You'll need to add these font files
+  src: [
+    {
+      path: '../fonts/NTSomic-Regular.otf',
+      weight: '400',
+      style: 'normal'
+    }
+  ],
   variable: '--font-somic-regular'
 });
 
