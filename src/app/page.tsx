@@ -1,34 +1,10 @@
 'use client';
 
 import { Source_Sans_3 } from 'next/font/google';
-import localFont from 'next/font/local';
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-
-// Initialize only the fonts we're actually using
-const sourceSans = Source_Sans_3({
-  subsets: ['latin'],
-  variable: '--font-source-sans',
-});
-
-// Initialize local fonts we're actually using
-const sloopScript = localFont({
-  src: [
-    {
-      path: '../fonts/NTSomic-Regular.otf',
-      weight: '400',
-      style: 'normal'
-    }
-  ],
-  variable: '--font-somic-regular'
-});
-
-const univers = localFont({
-  src: '../fonts/UniversRegular.ttf',
-  variable: '--font-univers'
-});
 
 // Define interface for font entries with description
 interface FontEntry {
@@ -40,7 +16,6 @@ interface FontEntry {
   description: string;
 }
 
-// Rest of your code remains the same, starting from:
 export default function Home() {
   const [selectedPrimary, setSelectedPrimary] = useState<string>('');
   const [selectedSecondary, setSelectedSecondary] = useState<string>('');
@@ -305,9 +280,8 @@ export default function Home() {
 
       <footer className="mt-32 py-12 border-t">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          {/* Using Geist Sans for clean, modern footer text */}
           <p className="font-geist-sans text-sm text-gray-600">
-            Made by{" "}
+            Made by&nbsp;
             <a 
               href="https://www.jacksweeney.xyz/"
               target="_blank"
