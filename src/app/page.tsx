@@ -280,7 +280,7 @@ export default function Home() {
       <footer className="mt-32 py-12 border-t">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="font-geist-sans text-sm text-gray-600">
-            Made by&nbsp;
+            Made by&apos;
             <a 
               href="https://www.jacksweeney.xyz/"
               target="_blank"
